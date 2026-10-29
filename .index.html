@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lavabos GALA | Elegancia para tu hogar</title>
+
+<style>
+:root {
+  --negro: #202020;
+  --gris: #626262;
+  --fondo: #f5f5f3;
+  --blanco: #ffffff;
+  --dorado: #b79a70;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--fondo);
+  color: var(--negro);
+  line-height: 1.6;
+}
+
+header {
+  background: var(--blanco);
+  padding: 18px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+
+.logo span {
+  color: var(--dorado);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--negro);
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: var(--dorado);
+}
+
+.hero {
+  min-height: 450px;
+  padding: 75px 7%;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.78),
+    rgba(0,0,0,.15)),
+    url("https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+  color: white;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 6vw, 62px);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 28px;
+}
+
+.boton {
+  display: inline-block;
+  padding: 13px 23px;
+  background: var(--dorado);
+  color: white;
+  text-decoration: none;
+  border-radius: 3px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.boton:hover {
+  background: #927750;
+}
+
+section {
+  padding: 65px 6%;
+  scroll-margin-top: 20px;
+}
+
+.titulo {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.titulo h2 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.titulo p {
+  color: var(--gris);
+}
+
+.intro {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.gris {
+  background: #eae9e6;
+}
+
+.catalogo {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.producto {
+  background: white;
+  border-radius: 7px;
+  overflow: hidden;
+  box-shadow: 0 3px 14px rgba(0,0,0,.07);
+  transition: transform .2s;
+}
+
+.producto:hover {
+  transform: translateY(-4px);
+}
+
+.producto img {
+  width: 100%;
+  height: 235px;
+  object-fit: cover;
+  display: block;
+  background: #e5e5e5;
+}
+
+.producto-info {
+  padding: 20px;
+}
+
+.producto-info h3 {
+  margin-bottom: 8px;
+}
+
+.producto-info p {
+  color: var(--gris);
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.muestras {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.muestra {
+  text-align: center;
+  width: 125px;
+}
+
+.color {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  border: 3px solid white;
+  box-shadow: 0 2px 8px #bbb;
+}
+
+.muestra p {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.nota {
+  text-align: center;
+  font-size: 13px;
+  color: var(--gris);
+  margin-top: 25px;
+}
+
+.contacto {
+  background: var(--negro);
+  color: white;
+}
+
+.contacto .titulo p {
+  color: #ddd;
+}
+
+.contacto-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  text-align: center;
+}
+
+.contacto-item {
+  padding: 22px;
+  background: #303030;
+  border-radius: 5px;
+}
+
+.contacto-item h3 {
+  color: #d5b88d;
+  margin-bottom: 10px;
+}
+
+.contacto-item a {
+  color: white;
+}
+
+.contacto .boton {
+  margin-top: 30px;
+}
+
+.centrado {
+  text-align: center;
+}
+
+footer {
+  background: #151515;
+  color: #ccc;
+  text-align: center;
+  padding: 22px;
+  font-size: 13px;
+}
+
+@media (max-width: 850px) {
+  .catalogo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contacto-grid {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    justify-content: center;
+  }
+
+  nav {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 520px) {
+  .catalogo {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: 400px;
+    padding: 50px 6%;
+  }
+
+  section {
+    padding: 48px 5%;
+  }
+
+  .titulo h2 {
+    font-size: 27px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">LAVABOS <span>GALA</span></div>
+
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#modelos">Modelos</a>
+    <a href="#monomandos">Monomandos</a>
+    <a href="#colores">Colores</a>
+    <a href="#sin-jaladeras">Sin jaladeras</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <h1>Diseño y elegancia para tu baño</h1>
+      <p>
+        Descubre nuestra colección de lavabos completos,
+        gabinetes y acabados para crear un espacio único.
+      </p>
+      <a class="boton" href="#modelos">VER CATÁLOGO</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="intro">
+      <div class="titulo">
+        <h2>Bienvenidos a Lavabos GALA</h2>
+        <p>Diseño, funcionalidad y estilo en cada detalle.</p>
+      </div>
+      <p>
+        Conoce nuestros diferentes modelos de lavabos,
+        combina los colores de tu preferencia y encuentra
+        la opción ideal para tu hogar o proyecto.
+      </p>
+    </div>
+  </section>
+
+  <section class="gris" id="modelos">
+    <div class="titulo">
+      <h2>Tu proximo lavabo</h2>
+      <p>Conoce los 11 modelos de nuestro catálogo.</p>
+    </div>
+
+    <div class="catalogo">
+
+      <article class="producto">
+        <img src="">
+        <div class="producto-info">
+          <h3>BALI</h3>
+          <p>Lavabo completo. Personaliza los colores y acabados.</p>
+          <a class="boton" href="#contacto">Solicitar información</a>
+        </div>
+      </article>
+
+      <article class="producto">
+        <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=800&q=80" alt="Lavabo completo modelo 2">
+        <div class="producto-info">
+          <h3>TROYA</h3>
+          <p>Un estilo para renovar tu espacio.</p>
+          <a class="boton" href="#contacto">Solicitar información</a>
+        </div>
+      </article>
+
+      <article class="producto">
+        <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=800&q=80" alt="Lavabo completo modelo 3">
+        <div class="producto-info">
+          <h3>GRAVITY</h3>
+          <p>Diseño funcional con opciones de acabados.</p>
+          <a class="boton" href="#contacto">Solicitar información</a>
+        </div>
+      </article>
+
+      <article class="producto">
+        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=800&q=80" alt="Lavabo completo modelo 4">
+        <div class="producto-info">
+          <h3>ITALIA</h3>
+          <p>Encuentra la combinación ideal para tu baño.</p>
+          <a class="boton" href="#contacto">Solicitar información</a>
+        </div>
+      </article>
+
+      <article class="producto">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Lavabo completo modelo 5">
+        <div class="producto-info">
+          <h3>PALERMO</h3>
+          <p>Una alternativa para diferentes espacios.</p>
+          <a class="boton" href="#contacto">Solicitar información</a>
+        </div>
+      </article>
+
+      <article class="producto">
+        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80" alt="Lavabo completo modelo 6">
+        <div class="producto-info">
+          <h3>AZALEA</h3>
+          <p>Personaliza tu proyecto con nuestros acabados.</p>
+          <a class="boton" href="#contacto">Solicitar información</a>
+        </div>
+      </article>
+
+      <article class="producto">
+        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80" alt="Lavabo completo modelo 7">
+        <div class="producto-info">
+          <h3>AZALEA MAX</h3>
+          <p>Estilo y practicidad para tu hogar.</p>
+          <a class="boton" href="#contacto">Solicitar información</a>
+        </div>
+      </article>
+
+      <article class="producto">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" alt="Lavabo completo modelo 8">
+        <div class="producto-info">
+          <h3>GRECIA PLUS</h3>
+          <p>Consulta las opciones disponibles.</p>
+          <a class="boton" href="#contacto">Solicitar información</a>
+        </div>
+      </article>
+
+      <article class="producto">
+        <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=800&q=80" alt="Lavabo completo modelo 9">
+        <div class="producto-info">
+          <h3>AZALEA PLUS</h3>
+          <p>Elige los detalles que mejor combinen.</p>
+          <a class="boton" href="#contacto">Solicitar información</a>
+        </div>
+      </article>
+
+      <article class="producto">
+        <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=800&q=80" alt="Lavabo completo modelo 10">
+        <div class="producto-info">
+          <h3>GRECIA</h3>
+          <p>Opciones para renovar tu cuarto de baño.</p>
+          <a class="boton" href="#contacto">Solicitar información</a>
+        </div>
+      </article>
+
+      <article class="producto">
+        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80" alt="Lavabo completo modelo 11">
+        <div class="producto-info">
+          <h3>EURO</h3>
+          <p>Conoce este modelo y solicita una cotización.</p>
+          <a class="boton" href="#contacto">Solicitar información</a>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="nota">
+      Las imágenes son ilustrativas. Sustitúyelas por las fotografías
+      reales de cada modelo de Lavabos GALA.
+    </p>
+  </section>
+
+  <section id="monomandos">
+    <div class="titulo">
+      <h2>Monomandos</h2>
+      <p>Completa tu lavabo con el monomando de tu preferencia.</p>
+    </div>
+
+    <div class="catalogo">
+
+      <article class="producto">
+        <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=800&q=80" alt="Monomando cromado">
+        <div class="producto-info">
+          <h3>Monomando cromado</h3>
+          <p>Acabado metálico clásico. Imagen ilustrativa.</p>
+          <a class="boton" href="#contacto">Consultar disponibilidad</a>
+        </div>
+      </article>
+
+      <article class="producto">
+        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=800&q=80" alt="Monomando negro">
+        <div class="producto-info">
+          <h3>Monomando negro</h3>
+          <p>Una opción de estilo contemporáneo. Imagen ilustrativa.</p>
+          <a class="boton" href="#contacto">Consultar disponibilidad</a>
+        </div>
+      </article>
+
+      <article class="producto">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Monomando acabado dorado">
+        <div class="producto-info">
+          <h3>Otros acabados</h3>
+          <p>Pregunta por los diseños que manejamos.</p>
+          <a class="boton" href="#contacto">Consultar disponibilidad</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="gris" id="colores">
+    <div class="titulo">
+      <h2>Colores de lavabos</h2>
+      <p>Explora las opciones de color para tu proyecto.</p>
+    </div>
+
+    <div class="muestras">
+      <div class="muestra">
+        <div class="color" style="background:#ffffff"></div>
+        <p>Blanco</p>
+      </div>
+
+      <div class="muestra">
+        <div class="color" style="background:#d8d3ca"></div>
+        <p>Beige</p>
+      </div>
+
+      <div class="muestra">
+        <div class="color" style="background:#999999"></div>
+        <p>Gris</p>
+      </div>
+
+      <div class="muestra">
+        <div class="color" style="background:#252525"></div>
+        <p>Negro</p>
+      </div>
+
+      <div class="muestra">
+        <div class="color" style="background:#a58b72"></div>
+        <p>Otro acabado</p>
+      </div>
+    </div>
+
+    <p class="nota">
+      Colores de ejemplo: confirma cuáles están disponibles
+      en el catálogo real de la empresa.
+    </p>
+
+    <div class="titulo" style="margin-top:55px">
+      <h2>Colores de gabinetes</h2>
+      <p>Combina el gabinete con el color de tu lavabo.</p>
+    </div>
+
+    <div class="muestras">
+      <div class="muestra">
+        <div class="color" style="background:#f1eee7"></div>
+        <p>Blanco</p>
+      </div>
+
+      <div class="muestra">
+        <div class="color" style="background:#b99a77"></div>
+        <p>Roble</p>
+      </div>
+
+      <div class="muestra">
+        <div class="color" style="background:#674a3c"></div>
+        <p>Nogal</p>
+      </div>
+
+      <div class="muestra">
+        <div class="color" style="background:#777873"></div>
+        <p>Gris</p>
+      </div>
+
+      <div class="muestra">
+        <div class="color" style="background:#282828"></div>
+        <p>Negro</p>
+      </div>
+    </div>
+
+    <p class="nota">
+      Las muestras son representativas. El tono puede variar
+      según el material y la iluminación.
+    </p>
+  </section>
+
+  <section id="sin-jaladeras">
+    <div class="titulo">
+      <h2>Gabinetes sin jaladeras</h2>
+      <p>Un diseño limpio para un baño moderno.</p>
+    </div>
+
+    <div class="catalogo">
+
+      <article class="producto">
+        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80" alt="Gabinete sin jaladeras modelo 1">
+        <div class="producto-info">
+          <h3>Sin jaladeras 01</h3>
+          <p>Diseño minimalista. Consulta los colores disponibles.</p>
+          <a class="boton" href="#contacto">Solicitar cotización</a>
+        </div>
+      </article>
+
+      <article class="producto">
+        <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=800&q=80" alt="Gabinete sin jaladeras modelo 2">
+        <div class="producto-info">
+          <h3>Sin jaladeras 02</h3>
+          <p>Una alternativa para renovar tu espacio.</p>
+          <a class="boton" href="#contacto">Solicitar cotización</a>
+        </div>
+      </article>
+
+      <article class="producto">
+        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80" alt="Gabinete sin jaladeras modelo 3">
+        <div class="producto-info">
+          <h3>Sin jaladeras 03</h3>
+          <p>Pregunta por las configuraciones disponibles.</p>
+          <a class="boton" href="#contacto">Solicitar cotización</a>
+        </div>
+      </article>
+
+    </div>
+    <p class="nota">
+      Agrega aquí las fotografías reales de las opciones sin jaladeras.
+    </p>
+  </section>
+
+  <section class="gris">
+    <div class="intro">
+      <div class="titulo">
+        <h2>¿Tienes un proyecto en mente?</h2>
+        <p>Estamos para ayudarte a elegir tu lavabo ideal.</p>
+      </div>
+      <p>
+        Contáctanos para consultar precios, medidas, existencias,
+        combinaciones de colores y opciones de entrega.
+      </p>
+      <br>
+      <a class="boton" href="#contacto">Pedir una cotización</a>
+    </div>
+  </section>
+
+  <section class="contacto" id="contacto">
+    <div class="titulo">
+      <h2>Contacto</h2>
+      <p>Comunícate con Lavabos GALA.</p>
+    </div>
+
+    <div class="contacto-grid">
+
+      <div class="contacto-item">
+        <h3>Teléfono y WhatsApp</h3>
+        <p>AGREGA AQUÍ TU TELÉFONO</p>
+        <p>Atención a clientes y cotizaciones.</p>
+      </div>
+
+      <div class="contacto-item">
+        <h3>Dirección</h3>
+        <p>AGREGA AQUÍ LA DIRECCIÓN DEL NEGOCIO</p>
+        <p>Visítanos para conocer nuestros productos.</p>
+      </div>
+
+      <div class="contacto-item">
+        <h3>Horario de atención</h3>
+        <p>AGREGA AQUÍ LOS HORARIOS</p>
+        <p>Consulta disponibilidad antes de visitarnos.</p>
+      </div>
+
+    </div>
+
+    <div class="centrado">
+      <!-- Reemplaza el número del enlace por el WhatsApp
+           de la empresa, incluyendo la clave de país 52. -->
+      <a class="boton"
+         href="https://wa.me/52TUNUMERO"
+         target="_blank"
+         rel="noopener noreferrer">
+        CONTACTAR POR WHATSAPP
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Lavabos GALA. Todos los derechos reservados.</p>
+  <p>Diseño, calidad y estilo para tu hogar.</p>
+</footer>
+
+</body>
+</html>
